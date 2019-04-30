@@ -18,6 +18,36 @@ get_header();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
+		<div class="hero">
+			<div class="hero-inner container">
+				<h1 class="hero-text">
+					<span class="hero-sitename"><?php bloginfo('name') ?></span>
+						fried seaweed roll
+				</h1>
+				<p class="hero-description">
+					<span class="magenta"><?php bloginfo('name') ?></span>
+					is a restaurant that creates future flavor nostalgia of street food.
+				</p>
+			</div>
+		</div>
+
+		<div class="intro">
+			<div class="intro-inner">
+				<h2 class="intro-title">
+					Introducing <?php bloginfo('name') ?>
+				</h2>
+				<p class="intro-description">
+					street food that was born in tough times.<br>
+					street food that everybody loves.<br>
+					<span class="yellow"><?php bloginfo('name') ?></span>
+					is on a mission to provide future<br>
+					flavor nostalgia of street food for men,<br>
+					women, children, grandpas and grandmas.<br>
+					we only use the best ingredients.
+				</p>
+			</div>
+		</div>
+
 		<?php
 		if ( have_posts() ) :
 

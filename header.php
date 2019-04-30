@@ -26,7 +26,7 @@
 
 	<header id="masthead" class="site-header">
 
-		 <div class="header-inner">
+		 <div class="header-inner container">
 		 	  <div class="site-branding">
 					<img src="<?php bloginfo('template_url'); ?>/assets/coolmat_logo.svg" class="logo">
 				</div>
