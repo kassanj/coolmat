@@ -103,6 +103,8 @@ a {
   background-position: center;
   padding-top: 310px;
   padding-bottom: 250px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .intro-inner {
@@ -159,7 +161,7 @@ a {
   pointer-events: none;
 }
 
-.food-title {
+.section-heading {
   font-size: 20px;
   padding-top: 50px;
   padding-bottom: 50px;
@@ -169,7 +171,7 @@ a {
   margin-bottom: 50px;
 }
 
-.food-grid {
+.grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-row-gap: 50px;
@@ -177,4 +179,121 @@ a {
   max-width: 1220px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.post {
+  position: relative;
+  padding-top: 60px;
+}
+
+.entry-number {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  border: solid 20px #FF0064;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FF0064;
+  z-index: 1;
+}
+
+.entry-title,
+.entry-price {
+  position: relative;
+  z-index: 2;
+}
+
+.location-description {
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.location-description h3 {
+  font-size: 12px;
+  margin: 0;
+}
+
+.location-description p {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.location-info {
+  display: flex;
+  align-items: center;
+}
+
+.map-inner {
+  position: relative;
+  padding-bottom: 75%;
+}
+
+.map-inner iframe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.site-footer {
+  padding: 50px 30px 20px 30px;
+  border-top: solid 1px #ccc;
+  font-size: 12px;
+  font-family: sans-serif;
+}
+
+.site-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-social {
+  display: flex
+}
+
+.social-link,
+.social-link img {
+  display: block;
+}
+
+.social-link {
+  margin-left: 5px;
+}
+
+
+/* screen sizes below 1100px */
+@media (max-width: 1100px) {
+
+  .entry-number {
+    width: 60px;
+    height: 60px;
+    border-width: 15px;
+  }
+
+  .post {
+    padding-top: 45px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+   .entry-number {
+     width: 30px;
+     height: 30px;
+     border-width: 4px;
+   }
+
+   .post {
+     padding-top: 19px;
+   }
 }

@@ -48,24 +48,19 @@ get_header();
 			</div>
 		</div>
 
-		<div class="food-title" id="food">
+		<div class="section-heading" id="food">
 			Menu
 		</div>
 
-		<div class="food-grid">
+		<div class="grid">
 			<?php
 			if ( have_posts() ) :
-				if ( is_home() && ! is_front_page() ) :
-					?>
-					<header>
-						<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-					</header>
-					<?php
-				endif;
 				/* Start the Loop */
+				$item_number = 1;
 				while ( have_posts() ) :
-					the_post();
-					get_template_part( 'template-parts/content', get_post_type() );
+					the_post(); ?>
+					<?php get_template_part( 'template-parts/content', get_post_type() );
+					$item_number++;
 				endwhile;
 				the_posts_navigation();
 			else :
@@ -74,8 +69,37 @@ get_header();
 			?>
 		</div>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+		<div class="section-heading" id="directions">
+			Directions to cool mat
+		</div>
+
+		<div class="location grid">
+			<div class="map">
+				<div class="map-inner">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.953374435938!2d126.86218631531143!3d37.55616227979976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9c03c38738ad%3A0x1eff909f2c04315c!2s284-10+Yeomchang-dong%2C+Gangseo-gu%2C+Seoul%2C+South+Korea!5e0!3m2!1sen!2sus!4v1556819108698!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+				</div>
+			</div>
+
+			<div class="location-info">
+				<div class="location-description">
+					<h3>Business Name</h3>
+					<p>cool mat</p>
+
+					<h3>Address</h3>
+					<p>284-10 Yeomchang-dong, Gangseo-gu, Seoul</p>
+
+					<h3>Phone Number</h3>
+					<p>02-9999-9999</p>
+
+					<h3>Directions</h3>
+					<p>Get out of gate 3 and walk straight down for about200 meters. You will see Cool Mat on your left.</p>
+				</div>
+			</div>
+		</div>
+
+
+		</main>
+	</div>
 
 <?php
 
