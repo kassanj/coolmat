@@ -37,22 +37,25 @@ get_header();
 			endif;
 		?>
 
+		<?php query_posts('posts_per_page=1&category_name=intro') ?>
+		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
+
 		<div class="intro" id="intro">
 			<div class="intro-inner">
 				<h2 class="intro-title">
-					Introducing <?php bloginfo('name') ?>
+					<?php the_title(); ?>
 				</h2>
 				<p class="intro-description">
-					street food that was born in tough times.<br>
-					street food that everybody loves.<br>
-					<span class="yellow"><?php bloginfo('name') ?></span>
-					is on a mission to provide future<br>
-					flavor nostalgia of street food for men,<br>
-					women, children, grandpas and grandmas.<br>
-					we only use the best ingredients.
+					<?php the_content(); ?>
 				</p>
 			</div>
 		</div>
+
+		<?php
+			endwhile;
+			endif;
+		?>
 
 		<div class="section-heading" id="food">
 			Menu
