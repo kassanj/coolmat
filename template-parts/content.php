@@ -14,7 +14,6 @@
 
 		<h1 class="entry-title">
 			<?php
-
 				the_title();
 			?>
 		</h1>
@@ -22,7 +21,7 @@
 		<div class="entry-price">
 			<?php the_content(); ?>
 		</div>
-		
+
 	</header>
 
 	<?php coolmat_post_thumbnail(); ?>
