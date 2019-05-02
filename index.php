@@ -18,18 +18,24 @@ get_header();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-		<div class="hero">
-			<div class="hero-inner container">
-				<h1 class="hero-text">
-					<span class="hero-sitename"><?php bloginfo('name') ?></span>
-						fried seaweed roll
-				</h1>
-				<p class="hero-description">
-					<span class="magenta"><?php bloginfo('name') ?></span>
-					is a restaurant that creates future flavor nostalgia of street food.
-				</p>
+	  <?php query_posts('posts_per_page=1&category_name=menu&orderby=rand') ?>
+		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+			<div class="hero">
+				<div class="hero-inner container">
+					<h1 class="hero-text">
+						<span class="hero-sitename"><?php bloginfo('name') ?></span>
+							<?php the_title(); ?>
+					</h1>
+					<p class="hero-description">
+						<span class="magenta"><?php bloginfo('name') ?></span>
+						 <?php bloginfo('description'); ?>
+					</p>
+				</div>
 			</div>
-		</div>
+		<?php
+			endwhile;
+			endif;
+		?>
 
 		<div class="intro" id="intro">
 			<div class="intro-inner">
@@ -54,6 +60,7 @@ get_header();
 
 		<div class="grid">
 			<?php
+			query_posts('posts_per_page=20&category_name=menu');
 			if ( have_posts() ) :
 				/* Start the Loop */
 				$item_number = 1;
