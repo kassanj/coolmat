@@ -71,10 +71,6 @@ a {
   position: relative;
 }
 
-.hero-inner {
-  background-image: url('../assets/intro-bg.svg');
-}
-
 .hero-text {
   font-size: 180px;
   line-height: 1;
@@ -272,6 +268,10 @@ a {
   margin-left: 5px;
 }
 
+.intro-description p {
+  margin: 0;
+}
+
 
 /* screen sizes below 1100px */
 @media (max-width: 1100px) {
@@ -293,6 +293,18 @@ a {
 
   .hero-title {
     font-size: 90px;
+  }
+
+  .intro {
+    padding-top: 105px;
+    padding-bottom: 125px;
+  }
+
+  .intro-title,
+  .intro-description {
+    /* here we use a relative font-size, where each character is
+    equal to 4% of the viewport width */
+    font-size: 4vw;
   }
 
 }
@@ -329,6 +341,25 @@ a {
    .hero-description {
      font-size: 16px;
    }
+
+   .intro {
+     padding-top: 85px;
+     padding-bottom: 105px;
+   }
+
+   .intro-title {
+     font-size: 21px;
+     margin-bottom: 20px;
+   }
+
+   .intro-description {
+     font-size: 36px;
+   }
+
+   .intro-description br {
+     display: none;
+   }
+
 }
 
 @media (max-width: 480px) {
@@ -350,5 +381,9 @@ a {
 
    .hero-description {
      bottom: 20px;
+   }
+
+   .intro-description {
+     font-size: 24px
    }
 }

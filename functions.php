@@ -160,3 +160,47 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+/**
+ * Register intro post type.
+ */
+function custom_post_type() {
+
+	$labels = array(
+		'name'
+		 => _x( 'Intros', 'Post Type General Name', 'text_domain' ),
+		'singular_name' => _x( 'Intro', 'Post Type Singular Name', 'text_domain' ),
+	);
+
+	$args = array(
+		'labels'                => $labels,
+		'taxonomies'            => array( 'category' ),
+		'public'                => true,
+	);
+
+	register_post_type( 'intro', $args );
+}
+
+add_action( 'init', 'custom_post_type', 0 );
+
+
+/**
+ * Register locations post type.
+ */
+function add_locations() {
+
+	$labels = array(
+		'name' => _x( 'Locations', 'Post Type General Name', 'text_domain' ),
+		'singular_name' => _x( 'Location', 'Post Type Singular Name', 'text_domain' ),
+	);
+
+	$args = array(
+		'labels'                => $labels,
+		'taxonomies'            => array( 'category' ),
+		'public'                => true,
+	);
+
+	register_post_type( 'location', $args );
+}
+
+add_action( 'init', 'add_locations', 0 );
